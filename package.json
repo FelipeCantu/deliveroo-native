@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/webpack-config": "^0.17.4",
     "@react-navigation/native": "^6.1.1",
     "@react-navigation/native-stack": "^6.9.7",
     "@sanity/client": "^4.0.1",
@@ -16,13 +17,17 @@
     "expo": "~47.0.8",
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
+    "install": "^0.13.0",
     "nativewind": "^2.0.11",
+    "npm": "^9.3.1",
     "react": "18.1.0",
+    "react-dom": "^18.2.0",
     "react-native": "0.70.5",
     "react-native-heroicons": "^3.2.0",
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
     "react-native-svg": "^13.6.0",
+    "react-native-web": "^0.18.11",
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {

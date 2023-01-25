@@ -1,14 +1,16 @@
 import { View, Text, Image, TextInput, ScrollView, } from 'react-native'
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { UserIcon, ChevronDownIcon, MagnifyingGlassIcon, AdjustmentsHorizontalIcon } from 'react-native-heroicons/outline'
 import Categories from '../components/Categories'
 import FeaturedRow from '../components/FeaturedRow'
+import category from '../sanity/schemas/category'
 
 
 const HomeScreen = () => {
   const navigation = useNavigation()
+  const [featuredCategories, setFeaturedCategories] = useState([])
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -61,20 +63,15 @@ const HomeScreen = () => {
         {/** Categories */}
         <Categories />
         {/** Featured Rows */}
-        <FeaturedRow
-          id='123'
-          title='Featured'
-          description="Everyone's been enjoying these juicy discounts"
-        />
-        <FeaturedRow
-          id='1234'
-          title='Tasty Discounts'
-          description="Everyone's been enjoying these juicy discounts"
-        /><FeaturedRow
-          id='1234'
-          title='Offers near you!'
-          description="Everyone's been enjoying these juicy discounts"
-        />
+
+        {featuredCategories?.map(category => (
+          <FeaturedRow 
+            key={category._id}
+            id={category._id}
+            title={category.name}
+            description={category.short_description}
+          />
+        ))}
       </ScrollView>
 
     </SafeAreaView>
