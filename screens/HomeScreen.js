@@ -7,7 +7,6 @@ import Categories from '../components/Categories'
 import FeaturedRow from '../components/FeaturedRow'
 import sanityClient from '../sanity'
 
-
 const HomeScreen = () => {
   const navigation = useNavigation()
   const [featuredCategories, setFeaturedCategories] = useState([])
@@ -36,7 +35,7 @@ const HomeScreen = () => {
       })
   }, [])
 
-  console.log(featuredCategories)
+  {/**console.log(featuredCategories*/}
 
   return (
     <SafeAreaView className='bg-white pt-5'>
